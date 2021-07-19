@@ -1,0 +1,97 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+
+body{
+    display: flex;
+    height: 100vh;
+    background-color: #bcf8e4;
+}
+
+
+.jogoMemoria{
+    height: calc(98% - 10px);
+    width: calc(45% - 10px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 10000px;
+    background-color: #d48b29;
+    padding: 2rem;
+}
+
+.carta{
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.9s;
+}
+
+.carta:active{
+    transform: scale(0.97);
+    transition: transform 0.2s;
+}
+
+.frente-carta, .verso-carta{
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    position: absolute;
+    border-radius: 5px;
+    background-color: rgb(92, 187, 182);
+    backface-visibility: hidden;
+}
+
+.frente-carta{
+    transform: rotateY(180deg);
+}
+
+.carta.giro{
+    transform: rotateY(180deg);
+}
+
+.placar{
+    width: calc(25% - 10px);
+    border: 0.8rem solid #2e8682;
+    border-radius: 10%;
+    color: rgba(0, 0, 0, 0.45);
+    text-align: center;
+    position: absolute;
+    padding: 5px;
+    top: calc(10% + 10px);
+    left: calc(2.5% - 10px);
+}
+
+#botao{
+    position: absolute;
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 0.4rem;
+    color: rgba(0, 0, 0, 0.45);
+    right: calc(9% );
+    bottom: calc(45% );
+    border-radius: 10%;
+    background-color: #bcf8e4;
+}
+
+@media (max-width: 740px){
+    .jogoMemoria{
+        padding: 1rem;
+    }
+    .placar{
+        border: 0.5rem solid #2e8682;
+        font-size: 1rem;
+    }
+    #botao{
+        font-size: 1rem;
+    }
+}
